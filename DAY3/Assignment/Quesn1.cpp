@@ -11,7 +11,10 @@ int main(){
     int n;  //no. of customers
     cin>>n;
 
-    vector<pair<long,long>> v(n);//declaring vector of pairs
+    vector<pair<long,long>> v(n); 
+    /* declaring vector of pairs for - customer order a pan and 
+    for  time required to cook that pan */
+    
     for(int i = 0;i<n;i++){
         scanf("%lld%lld", &v[i].first, &v[i].second);  
     }
@@ -21,7 +24,9 @@ int main(){
 
     set<pair<int,int>> q;
     long long t = v[0].first;
+    
     int indext = 0;
+    
     while (indext < n || q.size())
     {
         while (indext < n && v[indext].first <= t)
@@ -41,6 +46,7 @@ int main(){
         }
         
     }
+    //The average waiting time
     cout<< sum/n << endl;
     return 0;
 }
